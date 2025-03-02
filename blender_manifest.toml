@@ -1,0 +1,13 @@
+schema_version = "1.0.0"
+
+id = "auto_3bm"
+version = "2.0.0"
+name = "Auto 3BM"
+tagline = "Auto enables Emulate 3 Button Mouse when entering certain modes"
+maintainer = "Richard Princen <princenrichard@gmail.com>"
+type = "add-on"
+
+blender_version_min = "4.0.0"
+license = [
+  "MIT",
+]

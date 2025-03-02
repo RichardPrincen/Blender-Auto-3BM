@@ -1,9 +1,8 @@
 bl_info = {
-    "name": "Auto 3BM Sculpting",
-    "author": "Amir Hossein Mafi <amir77mafi@gmail.com>",
-    "version": (1, 0),
-    "blender": (2, 80, 0),
-    "description": 'Automatically enables "Emulate 3 Button Mouse" when entering sculpt mode',
+    "author": "Amir Hossein Mafi <amir77mafi@gmail.com>, Richard Princen <princenrichard@gmail.com>",
+    "version": (2, 0),
+    "blender": (4, 0, 0),
+    "description": 'Automatically enables "Emulate 3 Button Mouse" when entering certain modes',
     "category": "3D View",
 }
 
@@ -11,7 +10,7 @@ import bpy
 from bpy.app.handlers import persistent
 
 def callback_mode_change(object, data):
-    if bpy.context.active_object.mode == "SCULPT":
+    if bpy.context.mode == "SCULPT" or bpy.context.mode == "PAINT_WEIGHT" or bpy.context.mode == "PAINT_VERTEX_COLOR" or bpy.context.mode == "PAINT_TEXTURE": 
         bpy.context.preferences.inputs.use_mouse_emulate_3_button=True
     else:
         bpy.context.preferences.inputs.use_mouse_emulate_3_button=False
@@ -36,6 +35,7 @@ def load_handler(dummy):
     subscribe_mode_change()
 
 def register():
+    print("register")
     bpy.app.handlers.load_post.append(load_handler)
     
     # subscribe for the first time use, so we don't need to restart the blend file

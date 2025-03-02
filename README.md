@@ -12,4 +12,4 @@ This addon automatically enables "Emulate 3 Button Mouse" when entering sculptin
 
 ### Usage 
 
-Simply drag and drop the `auto_3bm.zip` file into your Blender window and install.
+Simply drag and drop the `auto_3bm-2.x.x.zip` file into your Blender window and install.

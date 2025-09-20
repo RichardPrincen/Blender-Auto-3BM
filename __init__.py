@@ -10,7 +10,7 @@ import bpy
 from bpy.app.handlers import persistent
 
 def callback_mode_change(object, data):
-    if bpy.context.mode == "SCULPT" or bpy.context.mode == "PAINT_WEIGHT" or bpy.context.mode == "PAINT_VERTEX_COLOR" or bpy.context.mode == "PAINT_TEXTURE" or bpy.context.mode == "VERTEX_PAINT": 
+    if bpy.context.mode == "SCULPT" or bpy.context.mode == "PAINT_WEIGHT" or bpy.context.mode == "PAINT_VERTEX_COLOR" or bpy.context.mode == "PAINT_TEXTURE" or bpy.context.mode == "VERTEX_PAINT" or bpy.context.mode == "PARTICLE":  
         bpy.context.preferences.inputs.use_mouse_emulate_3_button=True
     else:
         bpy.context.preferences.inputs.use_mouse_emulate_3_button=False
